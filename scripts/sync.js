@@ -2,7 +2,7 @@
 
 /**
  * @file scripts/sync.js
- * @description Entry point for the Twitch game list sync pipeline.
+ * @description Entry point for the Twitch category list sync pipeline.
  * This file is intentionally thin — it reads environment variables, orchestrates
  * the pipeline by calling the appropriate modules, and handles top-level errors.
  * All business logic lives in `lib/`.
@@ -11,7 +11,7 @@
  * @requires TWITCH_CLIENT_SECRET - Twitch application client secret (env var)
  *
  * @example
- * // Incremental sync (new and changed games only):
+ * // Incremental sync (new and changed categories only):
  * TWITCH_CLIENT_ID=xxx TWITCH_CLIENT_SECRET=yyy node scripts/sync.js
  *
  * @example
@@ -22,8 +22,8 @@
 import { fileURLToPath } from "node:url";
 
 import { getAccessToken } from "../lib/auth.js";
-import { fetchAllGames } from "../lib/api.js";
-import { mergeGames } from "../lib/transform.js";
+import { fetchAllCategories } from "../lib/api.js";
+import { mergeCategories } from "../lib/transform.js";
 import { readData, writeData } from "../lib/store.js";
 
 /**
@@ -31,7 +31,7 @@ import { readData, writeData } from "../lib/store.js";
  * 1. Validates required environment variables
  * 2. Loads the existing dataset from disk (unless `FULL_RESYNC=true`)
  * 3. Obtains a Twitch app access token
- * 4. Fetches all games from the Twitch Helix API
+ * 4. Fetches all categories from the Twitch Helix API
  * 5. Merges fresh data into the existing dataset
  * 6. Writes the result back to disk
  *
@@ -55,12 +55,12 @@ async function main() {
   if (fullResync) {
     console.log("🔄 Full resync requested — ignoring existing data.");
   } else {
-    console.log(`📂 Loaded ${existing.length} existing games from disk.`);
+    console.log(`📂 Loaded ${existing.length} existing categories from disk.`);
   }
 
   const token = await getAccessToken(clientId, clientSecret);
-  const fresh = await fetchAllGames(clientId, token);
-  const merged = mergeGames(existing, fresh);
+  const fresh = await fetchAllCategories(clientId, token);
+  const merged = mergeCategories(existing, fresh);
 
   writeData(merged);
   console.log("🎉 Sync complete.");

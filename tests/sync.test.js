@@ -22,13 +22,13 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 
-import { normaliseGame, mergeGames } from "../lib/transform.js";
+import { normaliseCategory, mergeCategories } from "../lib/transform.js";
 import { buildOutput, readData, writeData } from "../lib/store.js";
-import { fetchAllGames } from "../lib/api.js";
+import { fetchAllCategories } from "../lib/api.js";
 
-// ─── lib/transform.js — normaliseGame ────────────────────────────────────────
+// ─── lib/transform.js — normaliseCategory ────────────────────────────────────────
 
-describe("normaliseGame", () => {
+describe("normaliseCategory", () => {
   test("replaces concrete dimensions with {width}x{height} placeholder", () => {
     const raw = {
       id: "509658",
@@ -37,7 +37,7 @@ describe("normaliseGame", () => {
       igdb_id: "1234",
     };
     assert.equal(
-      normaliseGame(raw).box_art_url,
+      normaliseCategory(raw).box_art_url,
       "https://static-cdn.jtvnw.net/ttv-boxart/509658-{width}x{height}.jpg",
     );
   });
@@ -45,49 +45,64 @@ describe("normaliseGame", () => {
   test("replaces all dimension occurrences in a single URL", () => {
     const raw = {
       id: "1",
-      name: "Game",
+      name: "Category",
       box_art_url: "https://example.com/52x72/art-600x800.jpg",
     };
     assert.equal(
-      normaliseGame(raw).box_art_url,
+      normaliseCategory(raw).box_art_url,
       "https://example.com/{width}x{height}/art-{width}x{height}.jpg",
     );
   });
 
   test("returns null for igdb_id when the field is absent", () => {
     assert.equal(
-      normaliseGame({ id: "1", name: "Game", box_art_url: "" }).igdb_id,
+      normaliseCategory({ id: "1", name: "Category", box_art_url: "" }).igdb_id,
       null,
     );
   });
 
   test("returns null for igdb_id when the value is falsy (0 or empty string)", () => {
     assert.equal(
-      normaliseGame({ id: "1", name: "G", box_art_url: "", igdb_id: 0 })
-        .igdb_id,
+      normaliseCategory({
+        id: "1",
+        name: "Category",
+        box_art_url: "",
+        igdb_id: 0,
+      }).igdb_id,
       null,
     );
     assert.equal(
-      normaliseGame({ id: "1", name: "G", box_art_url: "", igdb_id: "" })
-        .igdb_id,
+      normaliseCategory({
+        id: "1",
+        name: "Category",
+        box_art_url: "",
+        igdb_id: "",
+      }).igdb_id,
       null,
     );
   });
 
   test("preserves igdb_id when a truthy value is present", () => {
     assert.equal(
-      normaliseGame({ id: "1", name: "Game", box_art_url: "", igdb_id: "9999" })
-        .igdb_id,
+      normaliseCategory({
+        id: "1",
+        name: "Category",
+        box_art_url: "",
+        igdb_id: "9999",
+      }).igdb_id,
       "9999",
     );
   });
 
   test("returns an empty string for box_art_url when the field is missing", () => {
-    assert.equal(normaliseGame({ id: "1", name: "Game" }).box_art_url, "");
+    assert.equal(
+      normaliseCategory({ id: "1", name: "Category" }).box_art_url,
+      "",
+    );
   });
 
   test("passes id and name through unchanged", () => {
-    const result = normaliseGame({
+    const result = normaliseCategory({
       id: "42",
       name: "Elden Ring",
       box_art_url: "",
@@ -104,16 +119,16 @@ describe("normaliseGame", () => {
         "https://static-cdn.jtvnw.net/ttv-boxart/515025_IGDB-285x380.jpg",
     };
     assert.equal(
-      normaliseGame(raw).box_art_url,
+      normaliseCategory(raw).box_art_url,
       "https://static-cdn.jtvnw.net/ttv-boxart/515025_IGDB-{width}x{height}.jpg",
     );
   });
 });
 
-// ─── lib/transform.js — mergeGames ───────────────────────────────────────────
+// ─── lib/transform.js — mergeCategories ───────────────────────────────────────────
 
-describe("mergeGames", () => {
-  test("adds new games from a fresh list into an empty existing set", () => {
+describe("mergeCategories", () => {
+  test("adds new categories from a fresh list into an empty existing set", () => {
     const fresh = [
       {
         id: "1",
@@ -122,26 +137,27 @@ describe("mergeGames", () => {
       },
       { id: "2", name: "Beta", box_art_url: "https://example.com/2-52x72.jpg" },
     ];
-    assert.equal(mergeGames([], fresh).length, 2);
+    assert.equal(mergeCategories([], fresh).length, 2);
   });
 
-  test("retains existing games that are absent from the fresh list", () => {
+  test("retains existing categories that are absent from the fresh list", () => {
     const existing = [
       { id: "1", name: "Alpha", box_art_url: "", igdb_id: null },
     ];
     const fresh = [{ id: "2", name: "Beta", box_art_url: "" }];
-    const result = mergeGames(existing, fresh);
+    const result = mergeCategories(existing, fresh);
     assert.equal(result.length, 2);
     assert.ok(
       result.find((g) => g.id === "1"),
-      'Game with id "1" should still be present',
+      'Category with id "1" should still be present',
     );
   });
 
-  test("does not duplicate a game that appears in both lists", () => {
-    const game = { id: "1", name: "Alpha", box_art_url: "", igdb_id: null };
+  test("does not duplicate a category that appears in both lists", () => {
+    const category = { id: "1", name: "Alpha", box_art_url: "", igdb_id: null };
     assert.equal(
-      mergeGames([game], [{ id: "1", name: "Alpha", box_art_url: "" }]).length,
+      mergeCategories([category], [{ id: "1", name: "Alpha", box_art_url: "" }])
+        .length,
       1,
     );
   });
@@ -151,44 +167,50 @@ describe("mergeGames", () => {
       { id: "1", name: "Old Name", box_art_url: "", igdb_id: null },
     ];
     const fresh = [{ id: "1", name: "New Name", box_art_url: "" }];
-    assert.equal(mergeGames(existing, fresh)[0].name, "New Name");
+    assert.equal(mergeCategories(existing, fresh)[0].name, "New Name");
   });
 
   test("updates box_art_url when it has changed in the fresh list", () => {
     const existing = [
       {
         id: "1",
-        name: "Game",
+        name: "Category",
         box_art_url: "https://old.com/1-52x72.jpg",
         igdb_id: null,
       },
     ];
     const fresh = [
-      { id: "1", name: "Game", box_art_url: "https://new.com/1-285x380.jpg" },
+      {
+        id: "1",
+        name: "Category",
+        box_art_url: "https://new.com/1-285x380.jpg",
+      },
     ];
     assert.equal(
-      mergeGames(existing, fresh)[0].box_art_url,
+      mergeCategories(existing, fresh)[0].box_art_url,
       "https://new.com/1-{width}x{height}.jpg",
     );
   });
 
   test("updates igdb_id when it has changed in the fresh list", () => {
     const existing = [
-      { id: "1", name: "Game", box_art_url: "", igdb_id: null },
+      { id: "1", name: "Category", box_art_url: "", igdb_id: null },
     ];
-    const fresh = [{ id: "1", name: "Game", box_art_url: "", igdb_id: "777" }];
-    assert.equal(mergeGames(existing, fresh)[0].igdb_id, "777");
+    const fresh = [
+      { id: "1", name: "Category", box_art_url: "", igdb_id: "777" },
+    ];
+    assert.equal(mergeCategories(existing, fresh)[0].igdb_id, "777");
   });
 
   test("does not modify an entry when nothing has changed", () => {
     const existing = [
-      { id: "1", name: "Game", box_art_url: "", igdb_id: null },
+      { id: "1", name: "Category", box_art_url: "", igdb_id: null },
     ];
-    const fresh = [{ id: "1", name: "Game", box_art_url: "" }];
-    assert.deepEqual(mergeGames(existing, fresh)[0], existing[0]);
+    const fresh = [{ id: "1", name: "Category", box_art_url: "" }];
+    assert.deepEqual(mergeCategories(existing, fresh)[0], existing[0]);
   });
 
-  test("sorts the output by numeric game ID in ascending order", () => {
+  test("sorts the output by numeric category ID in ascending order", () => {
     const existing = [{ id: "30", name: "C", box_art_url: "", igdb_id: null }];
     const fresh = [
       { id: "200", name: "D", box_art_url: "" },
@@ -196,7 +218,7 @@ describe("mergeGames", () => {
       { id: "10", name: "B", box_art_url: "" },
     ];
     assert.deepEqual(
-      mergeGames(existing, fresh).map((g) => Number(g.id)),
+      mergeCategories(existing, fresh).map((g) => Number(g.id)),
       [5, 10, 30, 200],
     );
   });
@@ -205,27 +227,27 @@ describe("mergeGames", () => {
     const existing = [
       { id: "1", name: "Alpha", box_art_url: "", igdb_id: null },
     ];
-    assert.deepEqual(mergeGames(existing, []), existing);
+    assert.deepEqual(mergeCategories(existing, []), existing);
   });
 
   test("returns an empty array when both lists are empty", () => {
-    assert.deepEqual(mergeGames([], []), []);
+    assert.deepEqual(mergeCategories([], []), []);
   });
 
   test("handles large lists (500 existing + 500 fresh with 250 overlap) without error", () => {
     const existing = Array.from({ length: 500 }, (_, i) => ({
       id: String(i),
-      name: `Game ${i}`,
+      name: `Category ${i}`,
       box_art_url: "",
       igdb_id: null,
     }));
     const fresh = Array.from({ length: 500 }, (_, i) => ({
       id: String(i + 250),
-      name: `Game ${i + 250}`,
+      name: `Category ${i + 250}`,
       box_art_url: "",
     }));
     // ids 0–249 existing only, 250–499 overlap (no change), 500–749 new = 750 total
-    assert.equal(mergeGames(existing, fresh).length, 750);
+    assert.equal(mergeCategories(existing, fresh).length, 750);
   });
 });
 
@@ -234,7 +256,7 @@ describe("mergeGames", () => {
 describe("buildOutput", () => {
   test("includes a meta block with the correct total and source URL", () => {
     const output = buildOutput([
-      { id: "1", name: "Game", box_art_url: "", igdb_id: null },
+      { id: "1", name: "Category", box_art_url: "", igdb_id: null },
     ]);
     assert.equal(output.meta.total, 1);
     assert.equal(output.meta.source, "https://api.twitch.tv/helix/games/top");
@@ -248,12 +270,14 @@ describe("buildOutput", () => {
     );
   });
 
-  test("embeds the games array without modification", () => {
-    const games = [{ id: "99", name: "Test", box_art_url: "", igdb_id: null }];
-    assert.deepEqual(buildOutput(games).games, games);
+  test("embeds the categories array without modification", () => {
+    const categories = [
+      { id: "99", name: "Test", box_art_url: "", igdb_id: null },
+    ];
+    assert.deepEqual(buildOutput(categories).categories, categories);
   });
 
-  test("sets total to zero when the games list is empty", () => {
+  test("sets total to zero when the categories list is empty", () => {
     assert.equal(buildOutput([]).meta.total, 0);
   });
 });
@@ -277,11 +301,13 @@ describe("readData", () => {
     assert.deepEqual(result, []);
   });
 
-  test("returns the games array from a valid existing file", () => {
+  test("returns the categories array from a valid existing file", () => {
     const file = path.join(tmpDir, "index.json");
-    const games = [{ id: "1", name: "Game", box_art_url: "", igdb_id: null }];
-    fs.writeFileSync(file, JSON.stringify({ meta: {}, games }), "utf8");
-    assert.deepEqual(readData(file), games);
+    const categories = [
+      { id: "1", name: "Category", box_art_url: "", igdb_id: null },
+    ];
+    fs.writeFileSync(file, JSON.stringify({ meta: {}, categories }), "utf8");
+    assert.deepEqual(readData(file), categories);
   });
 
   test("returns an empty array and warns when the file contains invalid JSON", () => {
@@ -290,7 +316,7 @@ describe("readData", () => {
     assert.deepEqual(readData(file), []);
   });
 
-  test("returns an empty array when the file has no games key", () => {
+  test("returns an empty array when the file has no categories key", () => {
     const file = path.join(tmpDir, "index.json");
     fs.writeFileSync(file, JSON.stringify({ meta: {} }), "utf8");
     assert.deepEqual(readData(file), []);
@@ -324,12 +350,12 @@ describe("writeData", () => {
   test("writes syntactically valid JSON to the target file", () => {
     const outputFile = path.join(tmpDir, "index.json");
     writeData(
-      [{ id: "1", name: "Game", box_art_url: "", igdb_id: null }],
+      [{ id: "1", name: "Category", box_art_url: "", igdb_id: null }],
       outputFile,
       tmpDir,
     );
     const parsed = JSON.parse(fs.readFileSync(outputFile, "utf8"));
-    assert.equal(parsed.games.length, 1);
+    assert.equal(parsed.categories.length, 1);
   });
 
   test("ensures the written file ends with a trailing newline", () => {
@@ -354,28 +380,28 @@ describe("writeData", () => {
       tmpDir,
     );
     const parsed = JSON.parse(fs.readFileSync(outputFile, "utf8"));
-    assert.equal(parsed.games.length, 1);
-    assert.equal(parsed.games[0].name, "New");
+    assert.equal(parsed.categories.length, 1);
+    assert.equal(parsed.categories[0].name, "New");
   });
 
   test("records the correct total count in the meta block", () => {
     const outputFile = path.join(tmpDir, "index.json");
-    const games = Array.from({ length: 5 }, (_, i) => ({
+    const categories = Array.from({ length: 5 }, (_, i) => ({
       id: String(i),
-      name: `Game ${i}`,
+      name: `Category ${i}`,
       box_art_url: "",
       igdb_id: null,
     }));
-    writeData(games, outputFile, tmpDir);
+    writeData(categories, outputFile, tmpDir);
     const parsed = JSON.parse(fs.readFileSync(outputFile, "utf8"));
     assert.equal(parsed.meta.total, 5);
   });
 });
 
-// ─── lib/api.js — fetchAllGames ──────────────────────────────────────────────
+// ─── lib/api.js — fetchAllCategories ──────────────────────────────────────────────
 
-describe("fetchAllGames", () => {
-  test("returns all games from a single-page response", async () => {
+describe("fetchAllCategories", () => {
+  test("returns all categories from a single-page response", async () => {
     const mockGet = async () => ({
       data: [
         { id: "1", name: "Alpha", box_art_url: "" },
@@ -384,7 +410,7 @@ describe("fetchAllGames", () => {
       pagination: {},
     });
     assert.equal(
-      (await fetchAllGames("client-id", "token", mockGet)).length,
+      (await fetchAllCategories("client-id", "token", mockGet)).length,
       2,
     );
   });
@@ -403,7 +429,7 @@ describe("fetchAllGames", () => {
     ];
     let callCount = 0;
     const mockGet = async () => pages[callCount++];
-    const result = await fetchAllGames("client-id", "token", mockGet);
+    const result = await fetchAllCategories("client-id", "token", mockGet);
     assert.equal(result.length, 3);
     assert.equal(callCount, 3, "Should have made exactly 3 requests");
   });
@@ -422,7 +448,7 @@ describe("fetchAllGames", () => {
       capturedUrls.push(url);
       return pages[callCount++];
     };
-    await fetchAllGames("client-id", "token", mockGet);
+    await fetchAllCategories("client-id", "token", mockGet);
     assert.ok(
       !capturedUrls[0].includes("after="),
       "First request should not include after param",
@@ -439,19 +465,19 @@ describe("fetchAllGames", () => {
       capturedHeaders.push(headers);
       return { data: [], pagination: {} };
     };
-    await fetchAllGames("my-client-id", "my-token", mockGet);
+    await fetchAllCategories("my-client-id", "my-token", mockGet);
     assert.equal(capturedHeaders[0]["Client-ID"], "my-client-id");
     assert.equal(capturedHeaders[0]["Authorization"], "Bearer my-token");
   });
 
-  test("returns an empty array when the API returns no games", async () => {
+  test("returns an empty array when the API returns no categories", async () => {
     const mockGet = async () => ({ data: [], pagination: {} });
-    assert.deepEqual(await fetchAllGames("id", "token", mockGet), []);
+    assert.deepEqual(await fetchAllCategories("id", "token", mockGet), []);
   });
 
   test("handles a response with a missing data field without throwing", async () => {
     const mockGet = async () => ({ pagination: {} });
-    assert.deepEqual(await fetchAllGames("id", "token", mockGet), []);
+    assert.deepEqual(await fetchAllCategories("id", "token", mockGet), []);
   });
 
   test("propagates errors thrown by the injected HTTP function", async () => {
@@ -459,7 +485,7 @@ describe("fetchAllGames", () => {
       throw new Error("Network failure");
     };
     await assert.rejects(
-      () => fetchAllGames("id", "token", mockGet),
+      () => fetchAllCategories("id", "token", mockGet),
       /Network failure/,
     );
   });

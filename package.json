@@ -1,14 +1,14 @@
 {
-  "name": "twitch-games-list",
+  "name": "twitch-category-index",
   "version": "1.0.0",
-  "description": "Auto-synced dataset of every Twitch game with ID, name, and box art URL.",
-  "homepage": "https://github.com/seanquijote/twitch-games-list#readme",
+  "description": "Auto-synced dataset of every Twitch category with ID, name, and box art URL.",
+  "homepage": "https://github.com/seanquijote/twitch-category-index#readme",
   "bugs": {
-    "url": "https://github.com/seanquijote/twitch-games-list/issues"
+    "url": "https://github.com/seanquijote/twitch-category-index/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/seanquijote/twitch-games-list.git"
+    "url": "git+https://github.com/seanquijote/twitch-category-index.git"
   },
   "license": "MIT",
   "author": "seanquijote",
