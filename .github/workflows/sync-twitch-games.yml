@@ -1,0 +1,58 @@
+name: Sync Twitch Game List
+
+on:
+  schedule:
+    # Runs every day at 00:00 UTC
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      full_resync:
+        description: "Force a full resync (ignores existing data, re-fetches everything)"
+        required: false
+        default: "false"
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    name: Fetch & Update Game List
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run sync script
+        env:
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+          FULL_RESYNC: ${{ github.event.inputs.full_resync || 'false' }}
+        run: node scripts/sync.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push updated data
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -m "chore: sync game list [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git push
+
+      - name: No changes detected
+        if: steps.changes.outputs.changed == 'false'
+        run: echo "Game list is already up to date. No commit needed."
