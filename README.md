@@ -139,12 +139,23 @@ The script writes output to `data/games.json`.
 │       └── sync-twitch-games.yml   # Daily sync workflow
 ├── data/
 │   └── games.json                  # Auto-updated dataset (primary)
+├── lib/
+│   └── api.js                      — fetchAllGames (pagination)
+│   └── auth.js                     — getAccessToken (Twitch OAuth)
+│   └── config.js                   — All constants and resolved file-system paths
+│   └── http.js                     — httpsGet, httpsPost, sleep (no business logic)
+│   └── store.js                    — readData, buildOutput, writeData (all fs usage)
+│   └── transform.js                — normaliseGame, mergeGames (pure, zero I/O)
+│   └── types.js                    — JSDoc @typedefs only (Game, RawGame, GamesOutput, etc.)
 ├── scripts/
 │   └── sync.js                     # Sync script
-├── game_info.csv                   # Legacy: comma-delimited CSV
-├── game_info_semicolon.csv         # Legacy: semicolon-delimited CSV
-├── game_info.json                  # Legacy: original JSON snapshot
-├── game_info.sql                   # Legacy: MySQL/MariaDB dump
+├── tests/
+│   └── sync.test.js                # Sync script unit test
+├── .env.example                    # Sample .env file
+├── .gitignore
+├── LICENSE
+├── package.json
+├── package-lock.json
 └── README.md
 ```
 

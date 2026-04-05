@@ -1,7 +1,7 @@
 {
   "name": "twitch-games-list",
   "version": "1.0.0",
-  "description": "",
+  "description": "Auto-synced dataset of every Twitch game with ID, name, and box art URL.",
   "homepage": "https://github.com/seanquijote/twitch-games-list#readme",
   "bugs": {
     "url": "https://github.com/seanquijote/twitch-games-list/issues"
@@ -12,9 +12,14 @@
   },
   "license": "MIT",
   "author": "seanquijote",
-  "type": "commonjs",
+  "type": "module",
   "main": "scripts/sync.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sync": "node --env-file=.env scripts/sync.js",
+    "test": "node --test tests/sync.test.js",
+    "test:verbose": "node --test --test-reporter=spec tests/sync.test.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
