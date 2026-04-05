@@ -1,9 +1,8 @@
-name: Sync Twitch Categories List
+name: Sync Twitch Categories
 
 on:
   schedule:
-    # Runs every day at 00:00 UTC
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *" # Runs every day at 00:00 UTC
   workflow_dispatch:
     inputs:
       full_resync:
@@ -17,12 +16,21 @@ permissions:
 
 jobs:
   sync:
-    name: Fetch & Update Categories List
+    name: Fetch & Update Categories
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Get GitHub Actions App Token
+        id: get_workflow_token
+        uses: peter-murray/workflow-application-token-action@v4
+        with:
+          application_id: ${{ vars.GH_ACTIONS_APP_ID }}
+          application_private_key: ${{ secrets.GH_ACTIONS_APP_PRIVATE_KEY }}
+
+      - name: Checkout repository with token
         uses: actions/checkout@v6
+        with:
+          token: ${{ steps.get_workflow_token.outputs.token }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
@@ -44,26 +52,19 @@ jobs:
         run: |
           git diff --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
 
-      - name: Get Token
-        id: get_workflow_token
-        uses: peter-murray/workflow-application-token-action@v4
-        with:
-          application_id: ${{ vars.GH_ACTIONS_APP_ID }}
-          application_private_key: ${{ secrets.GH_ACTIONS_APP_PRIVATE_KEY }}
+      - name: No changes detected
+        if: steps.changes.outputs.changed == 'false'
+        run: echo "Categories list is already up to date. No commit needed."
 
-      - uses: actions/checkout@v6
-        with:
-          token: ${{ steps.get_workflow_token.outputs.token }}
+      - name: Changes detected
+        if: steps.changes.outputs.changed == 'true'
+        run: echo "Proceeding with commit and push."
 
       - name: Commit and push updated data
         if: steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/
+          git add data/index.json
           git commit -m "chore: Sync categories list [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           git push
-
-      - name: No changes detected
-        if: steps.changes.outputs.changed == 'false'
-        run: echo "Categories list is already up to date. No commit needed."
