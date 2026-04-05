@@ -10,7 +10,7 @@ Inspired from [Nerothos/TwithGameList](https://github.com/Nerothos/TwithGameList
 
 ## Data
 
-The dataset lives in `data/games.json` and is automatically updated every day at **00:00 UTC** by fetching from the [Twitch Helix API](https://dev.twitch.tv/docs/api/reference/#get-top-games).
+The dataset lives in `data/index.json` and is automatically updated every day at **00:00 UTC** by fetching from the [Twitch Helix API](https://dev.twitch.tv/docs/api/reference/#get-top-games).
 
 ### JSON structure
 
@@ -62,13 +62,13 @@ The following files from the original upstream repo are retained for backwards c
 | `game_info_semicolon.csv` | CSV with semicolon delimiter |
 | `game_info.sql` | MySQL/MariaDB dump |
 
-For any new integration, prefer `data/games.json` as it is the actively maintained source of truth.
+For any new integration, prefer `data/index.json` as it is the actively maintained source of truth.
 
 ---
 
 ## Automated sync
 
-A [GitHub Actions workflow](.github/workflows/sync-twitch-games.yml) runs daily and keeps `data/games.json` current.
+A [GitHub Actions workflow](.github/workflows/sync-twitch-games.yml) runs daily and keeps `data/index.json` current.
 
 ### How it works
 
@@ -126,7 +126,7 @@ FULL_RESYNC=true \
 node scripts/sync.js
 ```
 
-The script writes output to `data/games.json`.
+The script writes output to `data/index.json`.
 
 ---
 
@@ -138,7 +138,7 @@ The script writes output to `data/games.json`.
 │   └── workflows/
 │       └── sync-twitch-games.yml   # Daily sync workflow
 ├── data/
-│   └── games.json                  # Auto-updated dataset (primary)
+│   └── index.json                  # Auto-updated dataset (primary)
 ├── lib/
 │   └── api.js                      — fetchAllGames (pagination)
 │   └── auth.js                     — getAccessToken (Twitch OAuth)

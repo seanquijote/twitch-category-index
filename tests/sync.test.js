@@ -278,7 +278,7 @@ describe("readData", () => {
   });
 
   test("returns the games array from a valid existing file", () => {
-    const file = path.join(tmpDir, "games.json");
+    const file = path.join(tmpDir, "index.json");
     const games = [{ id: "1", name: "Game", box_art_url: "", igdb_id: null }];
     fs.writeFileSync(file, JSON.stringify({ meta: {}, games }), "utf8");
     assert.deepEqual(readData(file), games);
@@ -291,7 +291,7 @@ describe("readData", () => {
   });
 
   test("returns an empty array when the file has no games key", () => {
-    const file = path.join(tmpDir, "games.json");
+    const file = path.join(tmpDir, "index.json");
     fs.writeFileSync(file, JSON.stringify({ meta: {} }), "utf8");
     assert.deepEqual(readData(file), []);
   });
@@ -313,7 +313,7 @@ describe("writeData", () => {
 
   test("creates the data directory when it does not already exist", () => {
     const nestedDir = path.join(tmpDir, "nested", "data");
-    const outputFile = path.join(nestedDir, "games.json");
+    const outputFile = path.join(nestedDir, "index.json");
     writeData([], outputFile, nestedDir);
     assert.ok(
       fs.existsSync(nestedDir),
@@ -322,7 +322,7 @@ describe("writeData", () => {
   });
 
   test("writes syntactically valid JSON to the target file", () => {
-    const outputFile = path.join(tmpDir, "games.json");
+    const outputFile = path.join(tmpDir, "index.json");
     writeData(
       [{ id: "1", name: "Game", box_art_url: "", igdb_id: null }],
       outputFile,
@@ -333,7 +333,7 @@ describe("writeData", () => {
   });
 
   test("ensures the written file ends with a trailing newline", () => {
-    const outputFile = path.join(tmpDir, "games.json");
+    const outputFile = path.join(tmpDir, "index.json");
     writeData([], outputFile, tmpDir);
     assert.ok(
       fs.readFileSync(outputFile, "utf8").endsWith("\n"),
@@ -342,7 +342,7 @@ describe("writeData", () => {
   });
 
   test("overwrites an existing file entirely with new content", () => {
-    const outputFile = path.join(tmpDir, "games.json");
+    const outputFile = path.join(tmpDir, "index.json");
     writeData(
       [{ id: "1", name: "Old", box_art_url: "", igdb_id: null }],
       outputFile,
@@ -359,7 +359,7 @@ describe("writeData", () => {
   });
 
   test("records the correct total count in the meta block", () => {
-    const outputFile = path.join(tmpDir, "games.json");
+    const outputFile = path.join(tmpDir, "index.json");
     const games = Array.from({ length: 5 }, (_, i) => ({
       id: String(i),
       name: `Game ${i}`,
