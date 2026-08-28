@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_synced": "2026-08-27T05:39:12.373Z",
-    "total": 33480,
+    "last_synced": "2026-08-28T07:47:41.006Z",
+    "total": 33547,
     "source": "https://api.twitch.tv/helix/games/top"
   },
   "categories": [
@@ -2878,6 +2878,12 @@
       "name": "Disney's Chip 'n Dale Rescue Rangers",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1828_IGDB-{width}x{height}.jpg",
       "igdb_id": "6490"
+    },
+    {
+      "id": "1833",
+      "name": "Midtown Madness",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1833_IGDB-{width}x{height}.jpg",
+      "igdb_id": "2348"
     },
     {
       "id": "1835",
@@ -16122,6 +16128,12 @@
       "igdb_id": "3450"
     },
     {
+      "id": "11021",
+      "name": "Worms Forts: Under Siege",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/11021_IGDB-{width}x{height}.jpg",
+      "igdb_id": "6245"
+    },
+    {
       "id": "11023",
       "name": "Castlevania Legends",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/11023_IGDB-{width}x{height}.jpg",
@@ -22044,6 +22056,12 @@
       "igdb_id": "20654"
     },
     {
+      "id": "15566",
+      "name": "Lords of Thunder",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/15566_IGDB-{width}x{height}.jpg",
+      "igdb_id": "5400"
+    },
+    {
       "id": "15569",
       "name": "Planetfall",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/15569_IGDB-{width}x{height}.jpg",
@@ -27666,6 +27684,12 @@
       "igdb_id": "6400"
     },
     {
+      "id": "19378",
+      "name": "Major League Baseball 2K5",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/19378_IGDB-{width}x{height}.jpg",
+      "igdb_id": "8907"
+    },
+    {
       "id": "19382",
       "name": "MVP 07: NCAA Baseball",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/19382_IGDB-{width}x{height}.jpg",
@@ -29382,6 +29406,12 @@
       "igdb_id": "94908"
     },
     {
+      "id": "20415",
+      "name": "Fantasy Earth: Zero",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/20415_IGDB-{width}x{height}.jpg",
+      "igdb_id": "51192"
+    },
+    {
       "id": "20416",
       "name": "Super Robot Taisen Z",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/20416_IGDB-{width}x{height}.jpg",
@@ -30412,6 +30442,12 @@
       "name": "Shin Megami Tensei: Imagine",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/21255_IGDB-{width}x{height}.jpg",
       "igdb_id": "72672"
+    },
+    {
+      "id": "21268",
+      "name": "Far East of Eden: Ziria",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/21268_IGDB-{width}x{height}.jpg",
+      "igdb_id": "42002"
     },
     {
       "id": "21269",
@@ -34452,6 +34488,12 @@
       "igdb_id": "47448"
     },
     {
+      "id": "25562",
+      "name": "Record of Agarest War Zero",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/25562_IGDB-{width}x{height}.jpg",
+      "igdb_id": "7157"
+    },
+    {
       "id": "25571",
       "name": "Melfand Stories",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/25571_IGDB-{width}x{height}.jpg",
@@ -35614,6 +35656,12 @@
       "name": "Asylum",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/27219-{width}x{height}.jpg",
       "igdb_id": "92179"
+    },
+    {
+      "id": "27224",
+      "name": "Olivia's Mystery",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/27224_IGDB-{width}x{height}.jpg",
+      "igdb_id": "44386"
     },
     {
       "id": "27240",
@@ -40248,6 +40296,12 @@
       "igdb_id": "6874"
     },
     {
+      "id": "33064",
+      "name": "Cognition: An Erica Reed Thriller",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/33064_IGDB-{width}x{height}.jpg",
+      "igdb_id": "8426"
+    },
+    {
       "id": "33072",
       "name": "Zombeat",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/33072-{width}x{height}.jpg",
@@ -40510,6 +40564,12 @@
       "name": "EvilQuest",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/33323_IGDB-{width}x{height}.jpg",
       "igdb_id": "3237"
+    },
+    {
+      "id": "33325",
+      "name": "Mirai Shinwa Jarvas",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/33325_IGDB-{width}x{height}.jpg",
+      "igdb_id": "48425"
     },
     {
       "id": "33337",
@@ -43018,6 +43078,12 @@
       "name": "Tiger Woods PGA Tour 14",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/82734_IGDB-{width}x{height}.jpg",
       "igdb_id": "5227"
+    },
+    {
+      "id": "82736",
+      "name": "Irisu Syndrome",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/82736_IGDB-{width}x{height}.jpg",
+      "igdb_id": "64288"
     },
     {
       "id": "83073",
@@ -57402,6 +57468,12 @@
       "igdb_id": "76823"
     },
     {
+      "id": "495364",
+      "name": "Golf Clash",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/495364_IGDB-{width}x{height}.jpg",
+      "igdb_id": "56902"
+    },
+    {
       "id": "495366",
       "name": "The Eyes of Ara",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/495366_IGDB-{width}x{height}.jpg",
@@ -57726,6 +57798,12 @@
       "igdb_id": "31480"
     },
     {
+      "id": "495785",
+      "name": "Burger Shop 2",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/495785_IGDB-{width}x{height}.jpg",
+      "igdb_id": "52673"
+    },
+    {
       "id": "495798",
       "name": "Samurai Warriors: Spirit of Sanada",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/495798_IGDB-{width}x{height}.jpg",
@@ -57742,6 +57820,12 @@
       "name": "Killing Floor: Incursion",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/495806_IGDB-{width}x{height}.jpg",
       "igdb_id": "19544"
+    },
+    {
+      "id": "495808",
+      "name": "Russian Subway Dogs",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/495808_IGDB-{width}x{height}.jpg",
+      "igdb_id": "56564"
     },
     {
       "id": "495810",
@@ -64063,7 +64147,7 @@
     },
     {
       "id": "504462",
-      "name": "Call of Duty: Black Ops 4",
+      "name": "Call of Duty: Black Ops IIII",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/504462_IGDB-{width}x{height}.jpg",
       "igdb_id": "83727"
     },
@@ -65770,6 +65854,12 @@
       "name": "Spica Adventure",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/506659_IGDB-{width}x{height}.jpg",
       "igdb_id": "60051"
+    },
+    {
+      "id": "506739",
+      "name": "The Tribez",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/506739_IGDB-{width}x{height}.jpg",
+      "igdb_id": "38870"
     },
     {
       "id": "506760",
@@ -67728,6 +67818,12 @@
       "igdb_id": "74330"
     },
     {
+      "id": "509705",
+      "name": "Today is my Birthday",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/509705_IGDB-{width}x{height}.jpg",
+      "igdb_id": "112266"
+    },
+    {
       "id": "509708",
       "name": "Infantry Online",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/509708_IGDB-{width}x{height}.jpg",
@@ -68020,6 +68116,12 @@
       "name": "Trine 4: The Nightmare Prince",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/510044_IGDB-{width}x{height}.jpg",
       "igdb_id": "110846"
+    },
+    {
+      "id": "510052",
+      "name": "At Home Alone",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/510052_IGDB-{width}x{height}.jpg",
+      "igdb_id": "111237"
     },
     {
       "id": "510053",
@@ -74856,6 +74958,12 @@
       "igdb_id": "118637"
     },
     {
+      "id": "516337",
+      "name": "BBOnline Remastered",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/516337_IGDB-{width}x{height}.jpg",
+      "igdb_id": "130315"
+    },
+    {
       "id": "516343",
       "name": "Coreupt",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/516343_IGDB-{width}x{height}.jpg",
@@ -76318,6 +76426,12 @@
       "name": "Suleiman's Treasure",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/517540-{width}x{height}.jpg",
       "igdb_id": "137767"
+    },
+    {
+      "id": "517541",
+      "name": "Tactical Nexus",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/517541_IGDB-{width}x{height}.jpg",
+      "igdb_id": "126929"
     },
     {
       "id": "517542",
@@ -81120,6 +81234,12 @@
       "igdb_id": "272987"
     },
     {
+      "id": "43032540",
+      "name": "My Time at Evershine",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/43032540_IGDB-{width}x{height}.jpg",
+      "igdb_id": "316012"
+    },
+    {
       "id": "43072013",
       "name": "ROLLING STAR",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/43072013_IGDB-{width}x{height}.jpg",
@@ -81808,6 +81928,12 @@
       "name": "Nightwater",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/53692792_IGDB-{width}x{height}.jpg",
       "igdb_id": "386296"
+    },
+    {
+      "id": "53738850",
+      "name": "Linda³ Again",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/53738850_IGDB-{width}x{height}.jpg",
+      "igdb_id": "65761"
     },
     {
       "id": "54055474",
@@ -86814,6 +86940,12 @@
       "igdb_id": "406274"
     },
     {
+      "id": "135864483",
+      "name": "Timerift Raiders: The Past Awakens",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/135864483-{width}x{height}.jpg",
+      "igdb_id": "338268"
+    },
+    {
       "id": "136127980",
       "name": "The Song Of WILL",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/136127980_IGDB-{width}x{height}.jpg",
@@ -90034,6 +90166,12 @@
       "name": "Artful Escape",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/191394071_IGDB-{width}x{height}.jpg",
       "igdb_id": "109982"
+    },
+    {
+      "id": "191479049",
+      "name": "MyWhoosh",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/191479049_IGDB-{width}x{height}.jpg",
+      "igdb_id": "392380"
     },
     {
       "id": "191490278",
@@ -93678,6 +93816,12 @@
       "igdb_id": "227273"
     },
     {
+      "id": "257807849",
+      "name": "Digimon: Digital Heroes",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/257807849_IGDB-{width}x{height}.jpg",
+      "igdb_id": "233827"
+    },
+    {
       "id": "257895165",
       "name": "Coloring Book for Adults 2",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/257895165_IGDB-{width}x{height}.jpg",
@@ -94854,6 +94998,12 @@
       "igdb_id": "386943"
     },
     {
+      "id": "277053107",
+      "name": "Night Rolls Cozy Store",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/277053107_IGDB-{width}x{height}.jpg",
+      "igdb_id": "407211"
+    },
+    {
       "id": "277063413",
       "name": "Completely Stretchy",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/277063413_IGDB-{width}x{height}.jpg",
@@ -95086,6 +95236,12 @@
       "name": "Chiisana Obake: Acchi Socchi Kocchi",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/281474353_IGDB-{width}x{height}.jpg",
       "igdb_id": "48537"
+    },
+    {
+      "id": "281567377",
+      "name": "The Case Book of Arne",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/281567377_IGDB-{width}x{height}.jpg",
+      "igdb_id": "139219"
     },
     {
       "id": "281802051",
@@ -95470,6 +95626,12 @@
       "name": "Nintendogs: Best Friends",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/288734061_IGDB-{width}x{height}.jpg",
       "igdb_id": "47727"
+    },
+    {
+      "id": "288834598",
+      "name": "METRO 2039",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/288834598_IGDB-{width}x{height}.jpg",
+      "igdb_id": "398225"
     },
     {
       "id": "288839742",
@@ -97992,6 +98154,12 @@
       "igdb_id": "330556"
     },
     {
+      "id": "331198496",
+      "name": "Sobosuba",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/331198496-{width}x{height}.jpg",
+      "igdb_id": "293517"
+    },
+    {
       "id": "331347965",
       "name": "Makai Toushi SaGa",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/331347965_IGDB-{width}x{height}.jpg",
@@ -98344,6 +98512,12 @@
       "name": "My Big Sister: Remastered",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/337326208_IGDB-{width}x{height}.jpg",
       "igdb_id": "222871"
+    },
+    {
+      "id": "337330847",
+      "name": "Goodboy Galaxy",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/337330847_IGDB-{width}x{height}.jpg",
+      "igdb_id": "176049"
     },
     {
       "id": "337335816",
@@ -100084,6 +100258,12 @@
       "name": "OshiRabu: Waifus Over Husbandos - Love or Die",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/366713825_IGDB-{width}x{height}.jpg",
       "igdb_id": "150239"
+    },
+    {
+      "id": "366925283",
+      "name": "TARO IS BACK",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/366925283-{width}x{height}.jpg",
+      "igdb_id": "415094"
     },
     {
       "id": "366937751",
@@ -103006,6 +103186,12 @@
       "name": "Crackheads",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/417434625_IGDB-{width}x{height}.jpg",
       "igdb_id": "396342"
+    },
+    {
+      "id": "417453229",
+      "name": "Shake the Baby!",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/417453229-{width}x{height}.jpg",
+      "igdb_id": "337068"
     },
     {
       "id": "417844199",
@@ -106950,6 +107136,12 @@
       "igdb_id": "350945"
     },
     {
+      "id": "485321882",
+      "name": "Mothership Down",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/485321882_IGDB-{width}x{height}.jpg",
+      "igdb_id": "403976"
+    },
+    {
       "id": "485406812",
       "name": "NASCAR 25",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/485406812_IGDB-{width}x{height}.jpg",
@@ -109000,6 +109192,12 @@
       "name": "Wigmund",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/521274928_IGDB-{width}x{height}.jpg",
       "igdb_id": "123970"
+    },
+    {
+      "id": "521394720",
+      "name": "Undertale Last Breath",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/521394720_IGDB-{width}x{height}.jpg",
+      "igdb_id": "218848"
     },
     {
       "id": "521483201",
@@ -115134,6 +115332,12 @@
       "igdb_id": "251019"
     },
     {
+      "id": "624610693",
+      "name": "Matchy Star",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/624610693_IGDB-{width}x{height}.jpg",
+      "igdb_id": "83498"
+    },
+    {
       "id": "624677826",
       "name": "Computer TV Game",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/624677826-{width}x{height}.jpg",
@@ -116964,6 +117168,12 @@
       "igdb_id": "395846"
     },
     {
+      "id": "656356133",
+      "name": "Thanatos",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/656356133_IGDB-{width}x{height}.jpg",
+      "igdb_id": "285217"
+    },
+    {
       "id": "656979565",
       "name": "Adventures In Time & Space",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/656979565-{width}x{height}.jpg",
@@ -118626,6 +118836,12 @@
       "igdb_id": "287613"
     },
     {
+      "id": "685598739",
+      "name": "Nomori",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/685598739_IGDB-{width}x{height}.jpg",
+      "igdb_id": "213574"
+    },
+    {
       "id": "685685680",
       "name": "9 Souls",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/685685680_IGDB-{width}x{height}.jpg",
@@ -118694,7 +118910,7 @@
     {
       "id": "686561298",
       "name": "Cold Sweat",
-      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/686561298-{width}x{height}.jpg",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/686561298_IGDB-{width}x{height}.jpg",
       "igdb_id": "323508"
     },
     {
@@ -123786,6 +124002,12 @@
       "igdb_id": "319997"
     },
     {
+      "id": "772820722",
+      "name": "Fable",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/772820722_IGDB-{width}x{height}.jpg",
+      "igdb_id": "92550"
+    },
+    {
       "id": "772825560",
       "name": "New Day",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/772825560_IGDB-{width}x{height}.jpg",
@@ -124234,6 +124456,12 @@
       "name": "Digimon",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/780022046_IGDB-{width}x{height}.jpg",
       "igdb_id": "194324"
+    },
+    {
+      "id": "780037189",
+      "name": "Monster Park Tycoon",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/780037189_IGDB-{width}x{height}.jpg",
+      "igdb_id": "405167"
     },
     {
       "id": "780037970",
@@ -127266,6 +127494,12 @@
       "igdb_id": "352333"
     },
     {
+      "id": "831235470",
+      "name": "When Stars Collide",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/831235470_IGDB-{width}x{height}.jpg",
+      "igdb_id": "364519"
+    },
+    {
       "id": "831240450",
       "name": "Alter",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/831240450-{width}x{height}.jpg",
@@ -129826,6 +130060,12 @@
       "name": "Back to Drive",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/877510341_IGDB-{width}x{height}.jpg",
       "igdb_id": "391338"
+    },
+    {
+      "id": "877577650",
+      "name": "Xenomire",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/877577650_IGDB-{width}x{height}.jpg",
+      "igdb_id": "411532"
     },
     {
       "id": "877604542",
@@ -140070,6 +140310,12 @@
       "igdb_id": "385354"
     },
     {
+      "id": "1066468009",
+      "name": "Truck Driver: The Dutch Connection",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1066468009_IGDB-{width}x{height}.jpg",
+      "igdb_id": "369873"
+    },
+    {
       "id": "1066493358",
       "name": "Besitupia: Mediator",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1066493358_IGDB-{width}x{height}.jpg",
@@ -143756,7 +144002,7 @@
     {
       "id": "1129010880",
       "name": "Gawr Gura: Quest for Bread",
-      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1129010880-{width}x{height}.jpg",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1129010880_IGDB-{width}x{height}.jpg",
       "igdb_id": "217217"
     },
     {
@@ -143896,6 +144142,12 @@
       "name": "Alternate Watch",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1131019290_IGDB-{width}x{height}.jpg",
       "igdb_id": "242704"
+    },
+    {
+      "id": "1131019866",
+      "name": "NFL Retro Bowl '26",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1131019866_IGDB-{width}x{height}.jpg",
+      "igdb_id": "362065"
     },
     {
       "id": "1131034553",
@@ -149022,6 +149274,12 @@
       "igdb_id": "233676"
     },
     {
+      "id": "1218669834",
+      "name": "fister.fun",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1218669834_IGDB-{width}x{height}.jpg",
+      "igdb_id": "386434"
+    },
+    {
       "id": "1218754594",
       "name": "FUNKYHEART",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1218754594_IGDB-{width}x{height}.jpg",
@@ -151830,6 +152088,12 @@
       "igdb_id": "367936"
     },
     {
+      "id": "1265681262",
+      "name": "Jelly & Toast",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1265681262_IGDB-{width}x{height}.jpg",
+      "igdb_id": "258073"
+    },
+    {
       "id": "1265719015",
       "name": "Final Profit: A Shop RPG",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1265719015_IGDB-{width}x{height}.jpg",
@@ -152992,6 +153256,12 @@
       "name": "Pro Soccer Online",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1286420756_IGDB-{width}x{height}.jpg",
       "igdb_id": "182202"
+    },
+    {
+      "id": "1286691283",
+      "name": "YARETA",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1286691283_IGDB-{width}x{height}.jpg",
+      "igdb_id": "368607"
     },
     {
       "id": "1286711743",
@@ -155812,6 +156082,12 @@
       "name": "Wizard Shrimp",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1334992448-{width}x{height}.jpg",
       "igdb_id": "242874"
+    },
+    {
+      "id": "1335046283",
+      "name": "Beetle King",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1335046283-{width}x{height}.jpg",
+      "igdb_id": "18540"
     },
     {
       "id": "1335182317",
@@ -159744,6 +160020,12 @@
       "igdb_id": "288739"
     },
     {
+      "id": "1406406836",
+      "name": "Metal Gear Solid: Master Collection Vol. 2 Bonus Content",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1406406836_IGDB-{width}x{height}.jpg",
+      "igdb_id": "392677"
+    },
+    {
       "id": "1406636694",
       "name": "Dig, Dig, Die",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1406636694_IGDB-{width}x{height}.jpg",
@@ -160054,6 +160336,12 @@
       "name": "Under a Rock",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1411752763_IGDB-{width}x{height}.jpg",
       "igdb_id": "211912"
+    },
+    {
+      "id": "1411782406",
+      "name": "Heritage",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1411782406-{width}x{height}.jpg",
+      "igdb_id": "323499"
     },
     {
       "id": "1411785674",
@@ -162088,6 +162376,12 @@
       "name": "A=B",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1445434552_IGDB-{width}x{height}.jpg",
       "igdb_id": "182188"
+    },
+    {
+      "id": "1445449971",
+      "name": "No Results Found",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1445449971_IGDB-{width}x{height}.jpg",
+      "igdb_id": "412478"
     },
     {
       "id": "1445492691",
@@ -164170,6 +164464,12 @@
       "name": "Soccer Championship",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1485187677-{width}x{height}.jpg",
       "igdb_id": "108468"
+    },
+    {
+      "id": "1485492499",
+      "name": "eBaseball Pawafuru Puroyakyu 2020",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1485492499_IGDB-{width}x{height}.jpg",
+      "igdb_id": "136798"
     },
     {
       "id": "1485554981",
@@ -167364,6 +167664,12 @@
       "igdb_id": "222098"
     },
     {
+      "id": "1544653089",
+      "name": "Mimic Party",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1544653089_IGDB-{width}x{height}.jpg",
+      "igdb_id": "413646"
+    },
+    {
       "id": "1544743860",
       "name": "Path of the Abyss",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1544743860_IGDB-{width}x{height}.jpg",
@@ -168052,6 +168358,12 @@
       "name": "Twitchbox",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1558189664-{width}x{height}.jpg",
       "igdb_id": "96052"
+    },
+    {
+      "id": "1558206282",
+      "name": "Parking World: Build & Manage",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1558206282_IGDB-{width}x{height}.jpg",
+      "igdb_id": "265546"
     },
     {
       "id": "1558778353",
@@ -169390,6 +169702,12 @@
       "name": "Elminage Gothic: Ulm Zakir to Yami no Gishiki",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1582277132_IGDB-{width}x{height}.jpg",
       "igdb_id": "21029"
+    },
+    {
+      "id": "1582315838",
+      "name": "Ignitement",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1582315838_IGDB-{width}x{height}.jpg",
+      "igdb_id": "407440"
     },
     {
       "id": "1582487564",
@@ -172798,6 +173116,12 @@
       "name": "Wiped Clean PC",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1646598001-{width}x{height}.jpg",
       "igdb_id": "379229"
+    },
+    {
+      "id": "1646720021",
+      "name": "CleanFall",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1646720021_IGDB-{width}x{height}.jpg",
+      "igdb_id": "284819"
     },
     {
       "id": "1646904797",
@@ -176934,6 +177258,12 @@
       "igdb_id": "221852"
     },
     {
+      "id": "1723239504",
+      "name": "Title_Pending",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1723239504_IGDB-{width}x{height}.jpg",
+      "igdb_id": "144909"
+    },
+    {
       "id": "1723362790",
       "name": "The Jackbox Naughty Pack",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1723362790_IGDB-{width}x{height}.jpg",
@@ -178324,6 +178654,12 @@
       "name": "Dying Light: The Beast",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1749963163_IGDB-{width}x{height}.jpg",
       "igdb_id": "314252"
+    },
+    {
+      "id": "1750117318",
+      "name": "Public Access TV: Superstar!",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1750117318-{width}x{height}.jpg",
+      "igdb_id": "184235"
     },
     {
       "id": "1750267162",
@@ -181218,6 +181554,12 @@
       "igdb_id": "407153"
     },
     {
+      "id": "1805741157",
+      "name": "1x1 Street Football: mini soccer PvP",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1805741157-{width}x{height}.jpg",
+      "igdb_id": "414926"
+    },
+    {
       "id": "1805771893",
       "name": "Immortal Life",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1805771893_IGDB-{width}x{height}.jpg",
@@ -182188,6 +182530,12 @@
       "name": "Night of the Extinct",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1821738097_IGDB-{width}x{height}.jpg",
       "igdb_id": "351274"
+    },
+    {
+      "id": "1821764428",
+      "name": "Dig & Deal",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1821764428_IGDB-{width}x{height}.jpg",
+      "igdb_id": "347070"
     },
     {
       "id": "1821808420",
@@ -183924,6 +184272,12 @@
       "igdb_id": "190067"
     },
     {
+      "id": "1850636599",
+      "name": "Raid on Taihoku",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1850636599_IGDB-{width}x{height}.jpg",
+      "igdb_id": "196777"
+    },
+    {
       "id": "1850692487",
       "name": "Virtua Fighter 3tb",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1850692487_IGDB-{width}x{height}.jpg",
@@ -184872,6 +185226,12 @@
       "igdb_id": "183211"
     },
     {
+      "id": "1867279146",
+      "name": "Grand Theft Auto VI",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1867279146_IGDB-{width}x{height}.jpg",
+      "igdb_id": "52189"
+    },
+    {
       "id": "1867443081",
       "name": "Last Chick",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1867443081_IGDB-{width}x{height}.jpg",
@@ -185584,6 +185944,12 @@
       "name": "Arcane Angler",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1879086043_IGDB-{width}x{height}.jpg",
       "igdb_id": "400238"
+    },
+    {
+      "id": "1879204625",
+      "name": "Nobodies: Silent Blood",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1879204625_IGDB-{width}x{height}.jpg",
+      "igdb_id": "310791"
     },
     {
       "id": "1879308693",
@@ -188154,6 +188520,12 @@
       "igdb_id": "401260"
     },
     {
+      "id": "1923937291",
+      "name": "Clue Classic",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1923937291-{width}x{height}.jpg",
+      "igdb_id": "47075"
+    },
+    {
       "id": "1924027539",
       "name": "Dragon Quest VI: Maboroshi no Daichi",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1924027539_IGDB-{width}x{height}.jpg",
@@ -189474,6 +189846,12 @@
       "igdb_id": "411508"
     },
     {
+      "id": "1943764803",
+      "name": "XOXO Academy",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1943764803-{width}x{height}.jpg",
+      "igdb_id": "184314"
+    },
+    {
       "id": "1943848661",
       "name": "Promises to Keep",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1943848661_IGDB-{width}x{height}.jpg",
@@ -189802,6 +190180,12 @@
       "name": "Gunbot Diplomacy",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1950053611_IGDB-{width}x{height}.jpg",
       "igdb_id": "297960"
+    },
+    {
+      "id": "1950286364",
+      "name": "10",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1950286364_IGDB-{width}x{height}.jpg",
+      "igdb_id": "294440"
     },
     {
       "id": "1950303230",
@@ -190492,6 +190876,12 @@
       "name": "realMyst: Masterpiece Edition",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1964019527_IGDB-{width}x{height}.jpg",
       "igdb_id": "23294"
+    },
+    {
+      "id": "1964057485",
+      "name": "THE IDOLM@STER PLATINUM STARS",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/1964057485_IGDB-{width}x{height}.jpg",
+      "igdb_id": "22507"
     },
     {
       "id": "1964141698",
@@ -193120,6 +193510,12 @@
       "name": "The Demon Queen's Dire Dilemma",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/2010128500-{width}x{height}.jpg",
       "igdb_id": "347449"
+    },
+    {
+      "id": "2010156204",
+      "name": "Can I Come In?",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/2010156204-{width}x{height}.jpg",
+      "igdb_id": "415368"
     },
     {
       "id": "2010173910",
@@ -199456,6 +199852,12 @@
       "name": "Luminous Jigsaw Puzzles",
       "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/2126851111_IGDB-{width}x{height}.jpg",
       "igdb_id": "402163"
+    },
+    {
+      "id": "2126931977",
+      "name": "Squadron 42",
+      "box_art_url": "https://static-cdn.jtvnw.net/ttv-boxart/2126931977_IGDB-{width}x{height}.jpg",
+      "igdb_id": "19128"
     },
     {
       "id": "2126941559",
